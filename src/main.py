@@ -1,4 +1,4 @@
-from src.cons import Under_20, Tens, More_than_hundred
+from cons import Under_20, Tens, More_than_hundred
 
 
 def number_to_word(num):
@@ -10,10 +10,10 @@ def number_to_word(num):
             return Tens[num // 10]
         return Tens[num // 10] + " " + Under_20[remainder]
     
-    pivot = max([key for key in more_than_hundred if key <= num])
+    pivot = max([key for key in More_than_hundred if key <= num])
     if num % pivot == 0:
-        return f'{number_to_word(num // pivot)} {more_than_hundred[pivot]}'
-    return f'{number_to_word(num // pivot)} {more_than_hundred[pivot]} {number_to_word(num % pivot)}'
+        return f'{number_to_word(num // pivot)} {More_than_hundred[pivot]}'
+    return f'{number_to_word(num // pivot)} {More_than_hundred[pivot]} {number_to_word(num % pivot)}'
 
 if __name__ == "__main__":
     print(number_to_word(1111111))
